@@ -3,6 +3,7 @@
 
 > **Assignment:** Advanced Data Science (ADS)  
 > **Author:** Heng  
+> **Supervisor:** Dr. May Thu  
 > **Dataset span:** 2000 – 2019 · Cambodia national level  
 > **Tools:** Python · pandas · statsmodels · Plotly · Seaborn · scikit-learn · scipy  
 > **Last updated:** February 26, 2026
@@ -655,6 +656,7 @@ This analysis is submitted as coursework for Advanced Data Science (ADS). All co
 ## Contact & Feedback
 
 **Author:** Heng  
+**Supervisor:** Dr. May Thu  
 **Course:** Advanced Data Science (ADS)  
 **Submission Date:** February 27, 2026
 
