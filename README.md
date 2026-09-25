@@ -24,6 +24,19 @@
 
 ---
 
+## 📢 Conference Presentation
+
+This research project was presented at the **1st Annual Conference of the Cambodian Society of Environmental Science and Engineering (CSESE) 2026**.
+
+- **Theme:** "Environmental Science and Engineering for Sustainable Development in Cambodia"
+- **Date:** 22-23 September 2026
+- **Location:** Institute of Technology of Cambodia (ITC)
+- **Topic Track:** Air Quality and Urban Pollution
+
+Aligning with the conference's goal of promoting science-based solutions for environmental management in the Lower Mekong Basin, this project highlights the complex intersections between fine particulate matter (PM2.5) and vector-borne disease transmission.
+
+---
+
 ## Overview
 
 This project investigates whether **fine particulate matter (PM2.5)** air pollution causally affects **malaria incidence** in Cambodia — a country where biomass burning dominates the dry season and malaria transmission peaks in the wet season. 
