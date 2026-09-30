@@ -1,5 +1,14 @@
-# 🌫️🦟 The Smog & Swarms Hypothesis
+<p align="center">
+  <img src="images/Component/banner.png" alt="Smog & Swarms Hypothesis Banner" width="100%">
+</p>
+
+<p align="center">
+  <img src="images/Component/logo_transparent_outside.png" alt="Smog & Swarms Hypothesis Logo" width="150">
+</p>
+
+#  The Smog & Swarms Hypothesis
 ### Does PM2.5 Air Pollution Drive Malaria in Cambodia? (2000–2019)
+
 
 > **Assignment:** Advanced Data Science (ADS)  
 > **Author:** Heng  
@@ -25,7 +34,11 @@
 
 ---
 
-## 📢 Conference Presentation
+##  Conference Presentation
+
+<p align="center">
+  <img src="images/Component/certificate.jpg" alt="Conference Presentation Certificate" width="80%">
+</p>
 
 This research project was presented at the **1st Annual Conference of the Cambodian Society of Environmental Science and Engineering (CSESE) 2026**.
 
@@ -64,12 +77,12 @@ Using this 240-month continuous dataset with Vector Autoregression (VAR) and cli
 
 | Dataset | Source | Coverage | Quality |
 |---------|--------|----------|---------|
-| PM2.5 satellite (µg/m³) | WHO Global Air Quality Database / World Bank F810947 | 2010–2019 (observed) | ✅ Direct measurement |
-| PM2.5 estimated (µg/m³) | Hybrid proxy-statistical method | 2001–2009 (gap-filled) | ⚠️ **45% of dataset**, R²=0.5-0.7 |
-| Malaria incidence (cases/1,000) | WHO SDG Indicator 442CEA8 | 2000–2019 | ⚠️ Annual national aggregates → monthly disaggregation |
+| PM2.5 satellite (µg/m³) | WHO Global Air Quality Database / World Bank F810947 | 2010–2019 (observed) |  Direct measurement |
+| PM2.5 estimated (µg/m³) | Hybrid proxy-statistical method | 2001–2009 (gap-filled) |  **45% of dataset**, R²=0.5-0.7 |
+| Malaria incidence (cases/1,000) | WHO SDG Indicator 442CEA8 | 2000–2019 |  Annual national aggregates → monthly disaggregation |
 | Clean fuels access (%) | WHO SDG Indicator 6A64C9A | 2000–2019 (proxy) | Used for PM2.5 gap-filling |
 | Air pollution mortality | WHO SDG Indicator E2FC6D7 | 2000–2019 (proxy) | Used for PM2.5 gap-filling |
-| Climate normals (Temp, Rainfall) | World Bank CCKP 1991–2020 | Seasonal baseline | ⚠️ Static 30-year normals, not observed interannual variation |
+| Climate normals (Temp, Rainfall) | World Bank CCKP 1991–2020 | Seasonal baseline |  Static 30-year normals, not observed interannual variation |
 
 > **Critical Data Limitation:** PM2.5 estimates for 2001-2009 (108 months, 45% of analysis window) are **unvalidated extrapolations** from a small training sample (2010-2019, N=10 years). Results should be considered **exploratory hypothesis-generating**, not confirmatory.
 
@@ -107,7 +120,7 @@ Phase 3: Vector Autoregression (VAR) — Base Model with Confounding
    → Granger causality test: Does PM2.5 improve Malaria forecasts?
    → Coefficient sign analysis: Negative → H₁ (Stress), Positive → H₂ (Urbanization)
    → Impulse Response Functions (IRF): Dynamic shock propagation
-   → ⚠️ **CRITICAL CAVEAT:** Base VAR results confounded by shared seasonality
+   →  **CRITICAL CAVEAT:** Base VAR results confounded by shared seasonality
 
 Phase 3b: VARX — Climate-Controlled Causal Inference (Gold Standard)
    → Seasonal decomposition (additive, period=12) on ALL variables:
@@ -200,7 +213,7 @@ The CCF across ±12 month lags reveals **negative correlation at k ≈ 0 to -3 m
 
 ![Cross-Correlation Function](images/ccf_pm25_malaria.png)
 
-> ⚠️ **CRITICAL INTERPRETATION:** This CCF signal is **NOT evidence of causation**. It reflects **"Dry Season Trap" confounding:**
+>  **CRITICAL INTERPRETATION:** This CCF signal is **NOT evidence of causation**. It reflects **"Dry Season Trap" confounding:**
 > 1. **Seasonal offset:** PM2.5 peaks dry season (Feb-Mar, no breeding sites), Malaria peaks wet season (Aug-Oct, abundant breeding)
 > 2. **Shared declining trend:** Both series declining 2000-2019 (improved air quality + malaria control)
 > 3. **Result:** Mechanical negative correlation unrelated to PM2.5 affecting mosquitoes
@@ -240,14 +253,14 @@ Augmented Dickey-Fuller tests show both PM2.5 and Malaria series are **non-stati
 
 | Direction | Typical Result | Interpretation |
 |-----------|----------------|----------------|
-| **PM2.5 → Malaria** | May show **significance** (p < 0.05) at some lags | ⚠️ **SPURIOUS** — driven by shared seasonality |
+| **PM2.5 → Malaria** | May show **significance** (p < 0.05) at some lags |  **SPURIOUS** — driven by shared seasonality |
 | Malaria → PM2.5 | Usually **not significant** (p ≥ 0.05) | No reverse causation (biologically implausible) |
 
 **Coefficient sign (if significant):**
 - **Negative cumulative sum** (typical): Suggests H₁ (Stress) — PM2.5 suppresses malaria
 - **Positive cumulative sum** (rare): Would suggest H₂ (Urbanization) — PM2.5 amplifies malaria
 
-**⚠️ CRITICAL CAVEAT:** Base VAR results are **confounded by "Dry Season Trap"**. Both variables driven by monsoon timing. Significant Granger test does NOT prove causation.
+** CRITICAL CAVEAT:** Base VAR results are **confounded by "Dry Season Trap"**. Both variables driven by monsoon timing. Significant Granger test does NOT prove causation.
 
 ### Impulse Response Functions (IRF)
 
@@ -281,9 +294,9 @@ IRF traces impact of a 1-unit PM2.5 shock on malaria over 12 months. Confidence 
 
 | VARX Granger Test Result | Coefficient Sign | Conclusion |
 |---------------------------|------------------|------------|
-| **Significant (p < 0.05)** | **Negative** | ✅ **H₁ (Stress) supported:** PM2.5 suppresses mosquitoes even after climate controls |
-| **Significant (p < 0.05)** | **Positive** | ✅ **H₂ (Urbanization) supported:** PM2.5 proxies urban breeding conditions |
-| **Not significant (p ≥ 0.05)** | N/A | ✅ **H₀ supported:** Base VAR result was spurious. Climate is the only driver. |
+| **Significant (p < 0.05)** | **Negative** |  **H₁ (Stress) supported:** PM2.5 suppresses mosquitoes even after climate controls |
+| **Significant (p < 0.05)** | **Positive** |  **H₂ (Urbanization) supported:** PM2.5 proxies urban breeding conditions |
+| **Not significant (p ≥ 0.05)** | N/A |  **H₀ supported:** Base VAR result was spurious. Climate is the only driver. |
 
 **Model Comparison Metrics:**
 
@@ -319,11 +332,11 @@ A rule-based outbreak risk classifier integrates PM2.5, temperature, and lagged 
 
 | PM2.5 | Temperature | Rainfall (lag 1) | Risk Level | Biological Interpretation |
 |-------|-------------|------------------|------------|---------------------------|
-| ≤25 | >30°C | ≥80mm | 🔴 **High (2)** | **Optimal breeding:** Clean air + heat + water → peak transmission |
-| >50 | >30°C | ≥80mm | 🚨 **Critical (3)** | **H₂ scenario:** Urban heat islands + standing water despite pollution |
-| >50 | >30°C | <80mm | 🟡 **Medium (1)** | **H₁ scenario:** PM2.5 stress may suppress mosquitoes, but urban heat persists |
-| Any | ≤30°C | Any | 🟢 **Low (0)** | Cool temperatures slow mosquito metabolism |
-| Other combinations | — | — | 🟢 **Low (0)** | Conditions not favorable for transmission |
+| ≤25 | >30°C | ≥80mm |  **High (2)** | **Optimal breeding:** Clean air + heat + water → peak transmission |
+| >50 | >30°C | ≥80mm |  **Critical (3)** | **H₂ scenario:** Urban heat islands + standing water despite pollution |
+| >50 | >30°C | <80mm |  **Medium (1)** | **H₁ scenario:** PM2.5 stress may suppress mosquitoes, but urban heat persists |
+| Any | ≤30°C | Any |  **Low (0)** | Cool temperatures slow mosquito metabolism |
+| Other combinations | — | — |  **Low (0)** | Conditions not favorable for transmission |
 
 ### Risk Heatmap
 
@@ -364,7 +377,7 @@ Historical risk classification (2000-2019) overlaid on actual malaria incidence 
 
 ## Key Finding
 
-> ### 🔬 Results are **INCONCLUSIVE** — Evidence Level: **EXPLORATORY, Not Confirmatory**
+> ###  Results are **INCONCLUSIVE** — Evidence Level: **EXPLORATORY, Not Confirmatory**
 
 ### Base VAR (Without Climate Controls)
 
@@ -396,13 +409,13 @@ After controlling for rainfall and temperature via seasonal decomposition and ex
 ### Scientific Confidence Assessment
 
 **Strong evidence** would require:
-- ✅ Significant VARX Granger test with narrow confidence intervals
-- ✅ Consistent coefficient sign across multiple model specifications
-- ✅ Validation on observed-only subset (2010-2019, N=120)
-- ✅ Laboratory studies (mosquito PM2.5 exposure experiments)
-- ✅ Spatial analysis (province-level with ground monitors)
+-  Significant VARX Granger test with narrow confidence intervals
+-  Consistent coefficient sign across multiple model specifications
+-  Validation on observed-only subset (2010-2019, N=120)
+-  Laboratory studies (mosquito PM2.5 exposure experiments)
+-  Spatial analysis (province-level with ground monitors)
 
-**Current status:** ❌ **EXPLORATORY ONLY** — None of the above validation steps completed.
+**Current status:**  **EXPLORATORY ONLY** — None of the above validation steps completed.
 
 ### Policy Implications
 
@@ -613,18 +626,18 @@ For more robust conclusions, future analyses should:
 ### Responsible Interpretation
 
 **DO:**
-- ✅ Treat results as exploratory hypothesis-generating
-- ✅ Acknowledge 45% gap-filled data limitation in all discussions
-- ✅ Emphasize climate dominance over PM2.5 in malaria transmission
-- ✅ Require experimental validation before policy changes
-- ✅ Compare base VAR vs. VARX to assess confounding sensitivity
+-  Treat results as exploratory hypothesis-generating
+-  Acknowledge 45% gap-filled data limitation in all discussions
+-  Emphasize climate dominance over PM2.5 in malaria transmission
+-  Require experimental validation before policy changes
+-  Compare base VAR vs. VARX to assess confounding sensitivity
 
 **DO NOT:**
-- ❌ Present findings as definitive proof of causation
-- ❌ Recommend changing air quality policies based solely on this analysis
-- ❌ Claim H₁ or H₂ is "proven" without lab experiments and spatial validation
-- ❌ Ignore the 10-100× larger effect of climate variables
-- ❌ Generalize beyond Cambodia or beyond 2000-2019 period
+-  Present findings as definitive proof of causation
+-  Recommend changing air quality policies based solely on this analysis
+-  Claim H₁ or H₂ is "proven" without lab experiments and spatial validation
+-  Ignore the 10-100× larger effect of climate variables
+-  Generalize beyond Cambodia or beyond 2000-2019 period
 
 ### Academic Integrity
 
@@ -670,6 +683,6 @@ For questions, suggestions, or collaboration inquiries regarding this analysis, 
 
 **Last updated:** February 27, 2026  
 **Notebook:** `Smog&Swarms_Hypothesis.ipynb` (31 cells, 2315 lines)  
-**Status:** ✅ All cells execute successfully, no errors  
+**Status:**  All cells execute successfully, no errors  
 **Evidence Level:** Exploratory (45% gap-filled data, climate confounding, no experimental validation)  
 **Policy Recommendation:** Focus malaria prevention on climate forecasting, not air quality indices
